@@ -1,2 +1,2 @@
-# terraform-jenkins-param
-terraform-jenkins-param
+# terraform-jenkins
+terraform-jenkins with parameters
