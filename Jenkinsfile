@@ -19,7 +19,7 @@ pipeline {
         stage('Plan') {
             steps {
                 sh 'pwd;ls -l; terraform init'
-                sh "pwd;ls -l; terraform plan -out tfplan -var-file qa.tfvars"
+                sh "pwd;ls -l; terraform plan -out tfplan -var environment=${ENVIRONMENT} -var owner=${OWNER} -var amid=${AMIID} -var instance_size=${INSTANCE_SIZE} -var acl_type=${ACL_TYPE} -var bucketname=${BUCKETNAME}"
                 sh 'terraform show  -no-color tfplan > tfplan.txt'
             }
         }
